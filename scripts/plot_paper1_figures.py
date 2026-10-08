@@ -102,7 +102,7 @@ def figure_1(output: Path):
         rect = plt.Rectangle((x, 2.15), 2.55, 2.7, facecolor=fill, edgecolor="#32414a", linewidth=1.5)
         ax.add_patch(rect)
         ax.text(x + 1.275, 4.35, acronym, ha="center", va="center", fontsize=17, weight="bold")
-        ax.text(x + 1.275, 3.7, heading, ha="center", va="center", fontsize=11, weight="semibold")
+        ax.text(x + 1.275, 3.7, heading, ha="center", va="center", fontsize=11, weight="bold")
         ax.text(x + 1.275, 2.85, detail, ha="center", va="center", fontsize=10, linespacing=1.4)
     ax.text(6, 5.55, "Static extended Holstein–Peierls sectors", ha="center", fontsize=18, weight="bold")
     ax.text(6, 1.35, "Shared lattice model; distinct particle spaces and interaction conventions", ha="center", fontsize=12)
@@ -162,7 +162,12 @@ def figure_3(root: Path, output: Path, inputs: list[Path]):
     ]
     handles += [plt.Line2D([0], [0], marker="o", linestyle="", markerfacecolor="none", markeredgecolor="#333333", label="marginal (<5 meV)")]
     fig.legend(handles=handles, loc="outside lower center", ncol=6, frameon=False)
-    fig.suptitle("Bipolaron topology in the frozen 20×20 U–V₁ map", fontsize=15, weight="bold")
+    fig.suptitle(
+        "Bipolaron topology in the frozen 20×20 U–V₁ map\n"
+        "g = 0.9–1.1 facets; single g = 0.8 separated control omitted",
+        fontsize=14,
+        weight="bold",
+    )
     return save_figure(fig, output / "figure-3-bipolaron-phase-map", "Bipolaron 20x20 U-V1 model trend")
 
 
@@ -177,7 +182,8 @@ def figure_4(root: Path, output: Path, inputs: list[Path]):
         path = data_dir / state["npz_path"]
         inputs.append(path)
         with np.load(path, allow_pickle=False) as arrays:
-            title = f"{state['id']} — {state['source_point_classification']}"
+            classification = state["source_point_classification"].replace("_", " ")
+            title = f"{state['id']} — {classification}"
             image_panel(axes[row, 0], arrays["lattice_u_A"], f"{title}: u", "coolwarm", center_zero=True, cbar_label="Å")
             image_panel(axes[row, 1], arrays["pair_relative_probability"], f"{title}: pair separation", "magma", cbar_label="probability")
     fig.suptitle("Representative relaxed bipolaron states at 20×20", fontsize=16, weight="bold")
@@ -196,9 +202,10 @@ def figure_5(root: Path, output: Path, inputs: list[Path]):
         inputs.append(path)
         with np.load(path, allow_pickle=False) as arrays:
             density = relative_exciton_density(arrays["pair_probability"])
-            image_panel(ax, density, f"{branch['initialization']} seed\nP₀={branch['onsite_probability']:.2f}", "magma", cbar_label="relative probability")
+            seed_label = branch["initialization"].replace("_", "-")
+            image_panel(ax, density, f"{seed_label} seed\nP₀={branch['onsite_probability']:.2f}", "magma", cbar_label="relative probability")
     fig.suptitle("Spin-blind electron–hole validation control (10×10)", fontsize=15, weight="bold")
-    fig.text(0.5, 0.015, "Seed names denote initial conditions; the solver does not assign singlet/triplet labels.", ha="center", fontsize=9)
+    fig.text(0.5, 0.015, "10×10 metastable control; seeds denote initial conditions and the model is spin blind.", ha="center", fontsize=9)
     return save_figure(fig, output / "figure-5-spin-blind-exciton-control", "Spin-blind electron-hole control states")
 
 
