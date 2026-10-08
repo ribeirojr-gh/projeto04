@@ -7,6 +7,8 @@ import argparse
 import csv
 import hashlib
 import json
+import os
+import platform
 import subprocess
 import sys
 from pathlib import Path
@@ -271,9 +273,16 @@ def main() -> None:
         "source_script_sha256": sha256(script_path),
         "python": sys.version.split()[0],
         "matplotlib": matplotlib.__version__,
+        "numpy": np.__version__,
+        "platform": platform.platform(),
+        "thread_environment": {
+            key: os.environ.get(key)
+            for key in ("OPENBLAS_NUM_THREADS", "OMP_NUM_THREADS", "MKL_NUM_THREADS")
+        },
+        "rendering_config_sha256": sha256(root / "pyproject.toml"),
         "input_files": [
             {"path": str(path.relative_to(root)) if path.is_relative_to(root) else str(path), "sha256": sha256(path)}
-            for path in sorted(set(inputs))
+            for path in sorted(set(inputs + [root / "pyproject.toml"]))
         ],
         "output_files": results,
         "interpretation": {
