@@ -74,6 +74,7 @@ parameter manifests, and separating validation controls from model trends.
 - Verified results report in Drive: `1Wdk_ee6SIgwF_bEor7hX3P_UlmaWFz8G`.
 - Both uploads were verified by listing the campaign folder.
 
-Generated run directories are not committed to Git. Current code and report
-changes remain to be reviewed and committed on `s3-paper1-parameter-campaign`
-under the project's milestone workflow.
+Generated run directories are not committed to Git; the Drive archive contains
+the raw branches. The manifests, comparison implementation, results report,
+and checkpoint are committed on `s3-paper1-parameter-campaign`; the S3 result
+commit is `24c1857`.
