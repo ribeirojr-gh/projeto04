@@ -51,6 +51,8 @@ def save_figure(fig: plt.Figure, path: Path, title: str) -> list[dict[str, objec
         format_metadata = dict(metadata)
         if suffix == "pdf":
             format_metadata.update({"CreationDate": None, "ModDate": None})
+        elif suffix == "svg":
+            format_metadata["Date"] = None
         elif suffix == "png":
             format_metadata = {"Software": metadata["Creator"], "Title": title}
         fig.savefig(output, format=suffix, dpi=300, metadata=format_metadata)
