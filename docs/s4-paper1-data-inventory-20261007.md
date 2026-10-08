@@ -3,7 +3,7 @@
 Date: 2026-10-07  
 Branch: `s3-paper1-parameter-campaign`  
 Inventory commit before this document: `2886d22`  
-Status: **inventory completed; paper-wide data freeze not ready**
+Status: **superseded; S4 data freeze completed 2026-10-08**
 
 ## Decision
 
@@ -82,3 +82,8 @@ a verified source for Figure 4's spatial fields.
    emit named PDF/SVG/PNG outputs plus a figure provenance record.
 6. Re-run each figure from a clean checkout and compare output hashes before
    declaring S4 frozen.
+
+
+## Superseded by completed freeze
+
+The recovery, control exports, deterministic figures, bundle archive, and checksums are now recorded in [the S4 freeze report](s4-paper1-data-recovery-20261008.md) and [umbrella manifest](s4-paper1-data-freeze-manifest-20261008.json). The readiness gaps listed above are resolved for Figures 1–6. Figure 7 remains optional.

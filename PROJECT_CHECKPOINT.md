@@ -1,6 +1,6 @@
 # Holstein–Peierls project checkpoint
 
-Updated: 2026-10-07
+Updated: 2026-10-08
 Branch: `s3-paper1-parameter-campaign`  
 Simulation source commit: `34a71f4c57ac8457cc7374d07cbd0bca307a6f57`
 
@@ -36,24 +36,11 @@ This remains a targeted competing-branch check, not a global five-seed search.
 Positive binding below the frozen 5 meV threshold is marginal and must not be
 promoted to robust binding; separated states do not receive a bound-pair label.
 
-## Current milestone: S4 paper data inventory
+## Current milestone: S4 Paper 1 data freeze
 
-S3 midpoint refinement is complete. The S4 inventory is recorded in
-`docs/s4-paper1-data-inventory-20261007.md` and its machine-readable companion
-`docs/s4-paper1-data-inventory-20261007.json`. The audit found that S3 has
-reproducible bipolaron results and verified midpoint archives, but this
-checkout contains no figure-generation scripts. One-polaron and exciton
-inputs, and the S1R raw ensemble, are represented by reports rather than
-complete local frozen datasets. Current S3 branch JSON files also do not
-contain the spatial fields needed for the planned representative BP lattice
-and pair-density maps.
+S4 Figures 1–6 are now frozen. The S3 raw archives and S1R GitHub Actions ensemble were recovered and hashed; P/X controls and representative BP spatial fields have machine-readable exports; deterministic PDF/SVG/PNG figures were rendered and reproduced byte-for-byte across two consecutive runs (18/18 output hashes). The full portable bundle (1,296 files; SHA-256 `34b52826ee454f43ecb0d1169cd94b4df08cd195f538a434ee7a438ffcc71ea8`) is archived in [Google Drive](https://drive.google.com/file/d/1kVW5kkL2dzwPa6GFBmfoResfWDiTMcru/view?usp=drivesdk).
 
-**S4 inventory: complete. Paper-wide data freeze: not ready.** Keep validation
-controls explicitly separate from model trends. Next recover and hash the
-canonical S3/S1R archives; verify whether the BP spatial fields were archived;
-freeze source datasets/manifests for the P and spin-blind X controls; then
-create deterministic figure scripts and a single Paper-1 umbrella provenance
-manifest linking the distinct sector manifests.
+**S4 data freeze: complete for Figures 1–6.** S3 results are model trends; P/X and S1R remain validation controls. Figure 7 is optional and excluded. The full recovery record and provenance are in `docs/s4-paper1-data-recovery-20261008.md` and `docs/s4-paper1-data-freeze-manifest-20261008.json`.
 
 ## Canonical artifacts
 

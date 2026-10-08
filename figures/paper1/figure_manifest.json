@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "dataset_id": "paper1-static-figure-set-v1",
+  "source_commit": "9e981f0d54153ecc288559f79b78df9fac0ead8b",
+  "source_script": "/home/luiz/SIMULACOES/CODEX/holstein-peierls/scripts/plot_paper1_figures.py",
+  "source_script_sha256": "827d4cdd486e30d082d8238327aedfbaed0dd1e2b329f35d7d8254ea4edd9efd",
+  "python": "3.12.3",
+  "matplotlib": "3.11.2",
+  "numpy": "2.5.3",
+  "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+  "thread_environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "rendering_config_sha256": "95663638080bd86080323abf14368bc099de358af42f8be6ba868f2c287ade10",
+  "input_files": [
+    {
+      "path": "configs/s3-paper1-bipolaron-production-20x20-v1.json",
+      "sha256": "27145e3e1322032b66389ee420e82df2c580eacfb9223c72280627c6a41f2597"
+    },
+    {
+      "path": "configs/s4-paper1-bipolaron-spatial-controls-v1.json",
+      "sha256": "346538cedfa745206d212e316b3b1df9cd76ac09918b52f4b5f23c1f11048211"
+    },
+    {
+      "path": "configs/s4-paper1-reference-controls-v1.json",
+      "sha256": "3fb193db350ea627ed9e77658b2bb9d87c3536b37596f7e3dcf69f2b5349b052"
+    },
+    {
+      "path": "paper1-local-data/bipolaron-spatial-controls-20261008-85a696c/bipolaron-20x20-axial.npz",
+      "sha256": "7f00c00247197acbfcf237ff1a20bd98388e7dc5a4d3645404c863764906eefb"
+    },
+    {
+      "path": "paper1-local-data/bipolaron-spatial-controls-20261008-85a696c/bipolaron-20x20-diagonal.npz",
+      "sha256": "a32fb84213877c74ce63f65e1cd42a0f72483ee5d1e13488f94eacf6f58540ad"
+    },
+    {
+      "path": "paper1-local-data/bipolaron-spatial-controls-20261008-85a696c/bipolaron-20x20-onsite.npz",
+      "sha256": "70c1bf619f8dda2c58785ae9f82f46353c21f3c48f56e8f2866b2e953d34fc20"
+    },
+    {
+      "path": "paper1-local-data/bipolaron-spatial-controls-20261008-85a696c/bipolaron-20x20-separated.npz",
+      "sha256": "0d233fed4c74c25858474f472ca264d7a7dc26ff5fc9c67ea6ba484a944ff7ce"
+    },
+    {
+      "path": "paper1-local-data/bipolaron-spatial-controls-20261008-85a696c/manifest.json",
+      "sha256": "dd72c24c7d12330dfdb08b6d4f20035189bf07e988bad0c746d9b756709be637"
+    },
+    {
+      "path": "paper1-local-data/validation-controls/generic-exciton-10x10-20261008-7ce26e7/exciton-10x10-ct_x.npz",
+      "sha256": "0d64c5d602527f6e9223eaeff2276863a95fd87a4fc200dcff083d203c6a4a0b"
+    },
+    {
+      "path": "paper1-local-data/validation-controls/generic-exciton-10x10-20261008-7ce26e7/exciton-10x10-ct_y.npz",
+      "sha256": "67a86157817820c65b9f3f62f4579c4db7707fb77ec50032cab1e45cbc30b002"
+    },
+    {
+      "path": "paper1-local-data/validation-controls/generic-exciton-10x10-20261008-7ce26e7/exciton-10x10-diagonal.npz",
+      "sha256": "ee4bfde1ef554ac4f63b860c4c965ba42fcc45854a683078e8d558a7b399fd59"
+    },
+    {
+      "path": "paper1-local-data/validation-controls/generic-exciton-10x10-20261008-7ce26e7/exciton-10x10-frenkel.npz",
+      "sha256": "d69c3bcdb2a1add3e8383807c8d4236902a7a1a9516907584c1d87fab3ea18f6"
+    },
+    {
+      "path": "paper1-local-data/validation-controls/generic-exciton-10x10-20261008-7ce26e7/exciton-10x10-separated.npz",
+      "sha256": "3ed9abd4dea8eedb595087003b6bab56529195b5fd87c0f4f356892885161a80"
+    },
+    {
+      "path": "paper1-local-data/validation-controls/generic-exciton-10x10-20261008-7ce26e7/manifest.json",
+      "sha256": "972928395b50ee1e5ba74f979ee6d1ec3855c90388830a44554f159317196eba"
+    },
+    {
+      "path": "paper1-local-data/validation-controls/generic-exciton-10x10-20261008-7ce26e7/polaron-20x20.npz",
+      "sha256": "6a100f410b80d8884eb8188e1453ce9ef48e53ed7b126b16f35f29a899cff41e"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "95663638080bd86080323abf14368bc099de358af42f8be6ba868f2c287ade10"
+    },
+    {
+      "path": "s1r-local-runs/20260926T-s1r-root-manifold-36260401478/artifact_manifest.json",
+      "sha256": "9249c5e4ab4371a7a8fdfeb6f1a8e7a46734d966121441933a5df0e5b23a7f87"
+    },
+    {
+      "path": "s1r-local-runs/20260926T-s1r-root-manifold-36260401478/artifacts/s1r-aggregate-36260401478-1/s1r-aggregate.md",
+      "sha256": "e31122b0ca4176613cbaeda3cff9390883e58d28572360c595d470b41d8fbcdc"
+    },
+    {
+      "path": "s1r-local-runs/20260926T-s1r-root-manifold-36260401478/artifacts/s1r-singlet-rprop-onsite-root8-36260401478-1/s1r-singlet-rprop-onsite-root8.json",
+      "sha256": "0846d83b4de7910b939bb0b830cfb208c10c0f60d1ee95f2b6ca563884569b61"
+    },
+    {
+      "path": "s1r-local-runs/20260926T-s1r-root-manifold-36260401478/artifacts/s1r-singlet-rprop-onsite-root8-36260401478-1/s1r-singlet-rprop-onsite-root8.npz",
+      "sha256": "a5c576fdf1da3c2a82bee5651cc6fdd52345635341549265170b0a1024681678"
+    },
+    {
+      "path": "s1r-local-runs/20260926T-s1r-root-manifold-36260401478/artifacts/s1r-triplet-rprop-onsite-36260401478-1/s1r-triplet-rprop-onsite-root0.json",
+      "sha256": "02b71eda87df261b3571c85fcde6f47f4056edf191b721624f0710df09f87f50"
+    },
+    {
+      "path": "s1r-local-runs/20260926T-s1r-root-manifold-36260401478/artifacts/s1r-triplet-rprop-onsite-36260401478-1/s1r-triplet-rprop-onsite-root0.npz",
+      "sha256": "dac6eab873dfa5f1797cf4964674c9a799667bb46fc58d75acdd55593fdb4a84"
+    },
+    {
+      "path": "s3-local-runs/s3-paper1-bipolaron-production-20x20-v1/20260928T150000Z/manifest.json",
+      "sha256": "e1b18ac8d5ca6c8c4168f5a7c5a04687f3e558fdbc0ef55e2e45ae1f2d420c01"
+    },
+    {
+      "path": "s3-local-runs/s3-paper1-bipolaron-production-20x20-v1/20260928T150000Z/points.csv",
+      "sha256": "c555f58f4ac5284aa1d2fd8e30cbed5aadd4a58510310d3cb8a91c5b8af5ad1a"
+    }
+  ],
+  "output_files": [
+    {
+      "path": "figure-1-model-sectors.pdf",
+      "sha256": "504fea63fa6fc2e0a78753729ef78639ee8af0ad5293ce860bb843de92e83f57",
+      "size_bytes": 26649
+    },
+    {
+      "path": "figure-1-model-sectors.svg",
+      "sha256": "ef37c633bed43b62a197d868490c0554c6f62736f87233faa2b4b47226507c74",
+      "size_bytes": 60106
+    },
+    {
+      "path": "figure-1-model-sectors.png",
+      "sha256": "b1bbd3c6dbb0312693f8b326502f926cd31e353a91e2cbd11e1e7da0748bebba",
+      "size_bytes": 172783
+    },
+    {
+      "path": "figure-2-polaron-reference.pdf",
+      "sha256": "c3cfecf58de00fcfc335871aaeff5d850b1a43e7b24198455e340f5082657a89",
+      "size_bytes": 23789
+    },
+    {
+      "path": "figure-2-polaron-reference.svg",
+      "sha256": "153f8db1818ae76a785f8e89bc6c573709997ee3e38f3f4ee2efd9ab4238c314",
+      "size_bytes": 74693
+    },
+    {
+      "path": "figure-2-polaron-reference.png",
+      "sha256": "918f9870821f1883f1c4cf5e258229c90b24d73997d491cd35b18226ad942624",
+      "size_bytes": 116670
+    },
+    {
+      "path": "figure-3-bipolaron-phase-map.pdf",
+      "sha256": "d89fafb72509062ca848f204fd42271ab5db1e4839c5fcb92f3181d52531d6bf",
+      "size_bytes": 31959
+    },
+    {
+      "path": "figure-3-bipolaron-phase-map.svg",
+      "sha256": "b0b3b5b8000c0f8d9adc7454cc977dbe840ac7df5def027d8a03164b943dd1ed",
+      "size_bytes": 91864
+    },
+    {
+      "path": "figure-3-bipolaron-phase-map.png",
+      "sha256": "6b9d6f310cef45268e912eca5c89b5811c2d8a7fe041af2ccba684167e270190",
+      "size_bytes": 165148
+    },
+    {
+      "path": "figure-4-bipolaron-spatial-states.pdf",
+      "sha256": "28ea78968ec34405823b9ebdde3d379cc3aa48143625c37bb9a91d674243ce37",
+      "size_bytes": 56740
+    },
+    {
+      "path": "figure-4-bipolaron-spatial-states.svg",
+      "sha256": "ddfa2963a5f332fb6c0f725e1a44cd00b78dff67afbbc8f6e4a37dd46682023f",
+      "size_bytes": 246241
+    },
+    {
+      "path": "figure-4-bipolaron-spatial-states.png",
+      "sha256": "84d829614b0a5fc9543933089932cdfbcf7c5bf04169875770346680ca5f2fc8",
+      "size_bytes": 424184
+    },
+    {
+      "path": "figure-5-spin-blind-exciton-control.pdf",
+      "sha256": "be60780673d6d4d4fd34a70ddc2697ee9f0a51ef2d9f62bdda06de06eadff52c",
+      "size_bytes": 43753
+    },
+    {
+      "path": "figure-5-spin-blind-exciton-control.svg",
+      "sha256": "044046930f4ae2df792021131154047a5cf9318fa3267bfd08c0ae97eac0c36d",
+      "size_bytes": 131632
+    },
+    {
+      "path": "figure-5-spin-blind-exciton-control.png",
+      "sha256": "700009eab089b687d08a9b9d2081460e4a963a64cdf7e83480971ff91b362bd8",
+      "size_bytes": 171860
+    },
+    {
+      "path": "figure-6-spin-adapted-control.pdf",
+      "sha256": "0ab648c8ef2d8b60c5435eb1f06962625e45ac816b302985feadb722258cdc4c",
+      "size_bytes": 57478
+    },
+    {
+      "path": "figure-6-spin-adapted-control.svg",
+      "sha256": "37978916cd4a70c5d16d9d0f15191be4f34f65fcd48c0c6a1679b5b7c7202dd8",
+      "size_bytes": 163619
+    },
+    {
+      "path": "figure-6-spin-adapted-control.png",
+      "sha256": "81e7195ec09165da64d783a699cda0b2874589787a153e02534b72e5cdd9ad50",
+      "size_bytes": 318697
+    }
+  ],
+  "interpretation": {
+    "figure_2": "one-polaron generic validation control",
+    "figure_3": "S3 model trend; marginal states use open markers under the 5 meV rule",
+    "figure_4": "representative S3 states, including a marginal diagonal state",
+    "figure_5": "spin-blind e-h validation control; no S/T labels",
+    "figure_6": "spin-adapted S1R validation control, not a material prediction"
+  }
+}
