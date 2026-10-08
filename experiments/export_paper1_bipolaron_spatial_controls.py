@@ -207,7 +207,7 @@ def main() -> None:
         print(
             f"{state['id']}: E={result.energy.total:.12f} eV "
             f"P0={observables.onsite_probability:.5f} "
-            f"Pdiag={observables.diagonal_probability:.5f} "
+            f"Pdiag={diagonal_probability:.5f} "
             f"<r>={observables.mean_separation:.5f}",
             flush=True,
         )
