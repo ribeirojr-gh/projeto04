@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "milestone": "S4-paper1-data-freeze",
+  "inventory_date": "2026-10-07",
+  "branch": "s3-paper1-parameter-campaign",
+  "inventory_source_commit": "2886d22",
+  "status": "inventory_complete_freeze_not_ready",
+  "figures": [
+    {"id": 1, "sector": "model_schematic", "category": "model_definition", "data_status": "not_applicable", "script_status": "missing"},
+    {"id": 2, "sector": "one_polaron", "category": "validation_control", "data_status": "report_only", "script_status": "missing"},
+    {"id": 3, "sector": "bipolaron_uv_map", "category": "model_trend", "data_status": "partial_local_and_drive_archive", "script_status": "missing"},
+    {"id": 4, "sector": "bipolaron_spatial_examples", "category": "model_trend", "data_status": "spatial_fields_not_found_in_local_branch_json", "script_status": "missing"},
+    {"id": 5, "sector": "spin_blind_exciton", "category": "validation_control_pending_production_manifest", "data_status": "report_only", "script_status": "missing"},
+    {"id": 6, "sector": "spin_adapted_singlet_triplet", "category": "validation_control", "data_status": "report_only_raw_ensemble_not_local", "script_status": "missing"},
+    {"id": 7, "sector": "cross_sector_summary", "category": "interpretation", "data_status": "source_documents_only", "script_status": "missing"}
+  ],
+  "local_midpoint_artifacts": [
+    {"path": "s3-local-runs/s3-paper1-bipolaron-boundary-midpoints-20x20-v1/20261007T144455Z/manifest.json", "sha256": "b649d678bac1559709df1477315cfb18dbad2ce5e3917af013311a00de3c0307"},
+    {"path": "s3-local-runs/s3-paper1-bipolaron-boundary-midpoints-20x20-v1/20261007T144455Z/points.csv", "sha256": "2ded120bed27e204053d6b1600ccf1290089057dfefd6fd90425c038428d7a59"},
+    {"path": "s3-local-runs/s3-paper1-bipolaron-boundary-midpoints-20x20-v1/20261007T144455Z/summary.json", "sha256": "f2e5492bfd8594b3f49504b88cf2ee5d388354af842aa5e0ec5f1d99dedb89ec"},
+    {"path": "s3-local-runs/s3-paper1-bipolaron-boundary-midpoints-40x40-v1/20260930T102438Z/manifest.json", "sha256": "ce6ed237ff0f0658e0e952a7394f47b40271ff675c5fe47fadea58e1609336ba"},
+    {"path": "s3-local-runs/s3-paper1-bipolaron-boundary-midpoints-40x40-v1/20260930T102438Z/comparison/midpoints-20261007/midpoint_finite_size_comparison.json", "sha256": "9766ac5a56f881647ac92e8d2c3d34bf08cdf939b6f763cc4bb1e8906049b95e"},
+    {"path": "s3-local-runs/s3-paper1-bipolaron-boundary-midpoints-40x40-v1/20260930T102438Z/comparison/midpoints-20261007/midpoint_points.csv", "sha256": "129fbc99aaa73025108e8caa09a6d62d4c67ea7bbc3bd4ef0a42c8d6f953be78"},
+    {"path": "s3-local-runs/s3-paper1-bipolaron-boundary-midpoints-40x40-v1/20260930T102438Z/comparison/midpoints-20261007/refined_transition_brackets.csv", "sha256": "0dcbc209019b6521a77286058899fc5a5baa3820b8aea3ddca4051736ed14226"}
+  ],
+  "drive_archives": [
+    {"drive_file_id": "1Kps1Hdni8LBrMKXjsEDYXCPdbq-FJtNy", "content": "combined_S3_midpoint_raw_archive", "sha256": "ea0be8f97816642acd02d72420d537369d90386fae558e7b3e808a7893877d1b"},
+    {"drive_file_id": "1qqGo1beNtPzux_FNKdOcynWUpEzT3JAv", "content": "S3_20x20_40x40_comparison_archive", "internal_hash_audit": "pending"}
+  ],
+  "figure_scripts": "none_found",
+  "next_action": "recover_canonical_archives_and_complete_sector_datasets"
+}

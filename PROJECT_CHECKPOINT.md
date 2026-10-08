@@ -36,11 +36,24 @@ This remains a targeted competing-branch check, not a global five-seed search.
 Positive binding below the frozen 5 meV threshold is marginal and must not be
 promoted to robust binding; separated states do not receive a bound-pair label.
 
-## Next action: S4 paper data freeze
+## Current milestone: S4 paper data inventory
 
-S3 midpoint refinement is complete. Proceed to S4 by consolidating immutable
-JSON/NPZ/CSV data products, tying figure-generation scripts to a commit and
-parameter manifests, and separating validation controls from model trends.
+S3 midpoint refinement is complete. The S4 inventory is recorded in
+`docs/s4-paper1-data-inventory-20261007.md` and its machine-readable companion
+`docs/s4-paper1-data-inventory-20261007.json`. The audit found that S3 has
+reproducible bipolaron results and verified midpoint archives, but this
+checkout contains no figure-generation scripts. One-polaron and exciton
+inputs, and the S1R raw ensemble, are represented by reports rather than
+complete local frozen datasets. Current S3 branch JSON files also do not
+contain the spatial fields needed for the planned representative BP lattice
+and pair-density maps.
+
+**S4 inventory: complete. Paper-wide data freeze: not ready.** Keep validation
+controls explicitly separate from model trends. Next recover and hash the
+canonical S3/S1R archives; verify whether the BP spatial fields were archived;
+freeze source datasets/manifests for the P and spin-blind X controls; then
+create deterministic figure scripts and a single Paper-1 umbrella provenance
+manifest linking the distinct sector manifests.
 
 ## Canonical artifacts
 
