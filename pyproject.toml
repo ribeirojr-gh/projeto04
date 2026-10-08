@@ -18,6 +18,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0"]
+figures = ["matplotlib==3.11.2"]
 
 [project.scripts]
 hp-polaron = "holstein_peierls.cli:main"
