@@ -1,78 +1,79 @@
 # Holstein–Peierls project checkpoint
 
-Updated: 2026-09-30  
+Updated: 2026-10-07
 Branch: `s3-paper1-parameter-campaign`  
-Midpoint campaign frozen at `db0b953`; run started from `50097b0`
+Simulation source commit: `34a71f4c57ac8457cc7374d07cbd0bca307a6f57`
 
 ## Current state
 
-Paper 1 static bipolaron S3 has completed its 20x20 production map and targeted
-40x40 finite-size checks. A reproducible cross-size comparison is now available
-from `scripts/compare_s3_finite_size.py`.
+The S3 midpoint finite-size campaign is complete. The 40x40 campaign completed
+28/28 branches; the targeted 20x20 counterpart completed 16/16. All runs had
+zero failed branches. Combining the seven new 20x20 coordinates with the three
+coordinates already present in the complete 20x20 production map gives **10/10
+matched midpoint points** with the same observable topology and classification
+at 20x20 and 40x40. Every selected branch converged and every midpoint passed
+the linear-Peierls gate at both sizes.
 
-- 16 shared parameter points: all 16 have matching observable topology at both
-  sizes, converged required branches, and pass the linear-Peierls gate;
-- 10 adjacent topology-transition brackets in the targeted subset: all 10 show
-  the same endpoint topology sequence at 20x20 and 40x40;
-- these are finite sampled intervals, not interpolated or exact boundary
-  locations;
-- 32 other 20x20 production points were deliberately not selected for the
-  targeted 40x40 campaign; this is not a failed or incomplete campaign;
-- 40x40 checks used the observed topology branch plus same-cell separated
-  branch, not the full five-seed ensemble.
+All ten original transition brackets have been narrowed to a half-interval by
+their midpoint result. The same sampled transition sequence is present at both
+sizes:
 
-## Current decision and next action
+| g | U (eV) | transition | refined V1 interval (meV) |
+| ---: | ---: | --- | ---: |
+| 0.9 | 0.75 | axial → diagonal | 4–8 |
+| 0.9 | 0.75 | diagonal → separated | 8–24 |
+| 1.0 | 0.525 | onsite → separated | 280–320 |
+| 1.0 | 0.75 | axial → diagonal | 10–16 |
+| 1.0 | 0.75 | diagonal → separated | 16–28 |
+| 1.0 | 1.0 | axial → diagonal | 2–4 |
+| 1.0 | 1.0 | diagonal → separated | 10–16 |
+| 1.1 | 0.75 | diagonal → separated | 16–28 |
+| 1.1 | 1.0 | axial → diagonal | 4–8 |
+| 1.1 | 1.0 | diagonal → separated | 12–16 |
 
-The formal 20x20/40x40 comparison and explicit sampled finite-size statuses are
-complete. Ten transition brackets remain too coarse for well-localized
-Paper-1 transition values. The follow-up 40x40 midpoint campaign is frozen at
-10 points and 28 branches and is currently running locally: 1/28 branch is
-complete, and the second (axial-y branch at g=0.9, U=0.75, V1=0.004 eV) is
-active. This is a targeted
-competing-root check, not a global five-seed search. After those results, assess
-whether seven new midpoint coordinates need 20x20 counterparts before
-promoting size-dependent claims, then proceed to the Paper-1 S4 data freeze.
+These are sampled intervals, not interpolated or exact transition locations.
+This remains a targeted competing-branch check, not a global five-seed search.
+Positive binding below the frozen 5 meV threshold is marginal and must not be
+promoted to robust binding; separated states do not receive a bound-pair label.
+
+## Next action: S4 paper data freeze
+
+S3 midpoint refinement is complete. Proceed to S4 by consolidating immutable
+JSON/NPZ/CSV data products, tying figure-generation scripts to a commit and
+parameter manifests, and separating validation controls from model trends.
 
 ## Canonical artifacts
 
-- comparison implementation: `scripts/compare_s3_finite_size.py`;
-- comparison report: `docs/s3-paper1-bipolaron-finite-size-comparison-20260930.md`;
-- frozen midpoint manifest:
-  `configs/s3-paper1-bipolaron-boundary-midpoints-40x40-v1.json`;
-- midpoint campaign design:
-  `docs/s3-paper1-bipolaron-boundary-midpoints-40x40-design-20260930.md`;
-- active local run:
-  `s3-local-runs/s3-paper1-bipolaron-boundary-midpoints-40x40-v1/20260930T102438Z`;
-- first branch checkpoint archive: `1twg218VlO1hwu8cCM3qOflEpuc4sZNwj`;
-- resume command: `OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
-  .venv-py31214/bin/python scripts/run_s3_local_campaign.py --manifest
-  configs/s3-paper1-bipolaron-boundary-midpoints-40x40-v1.json --run-dir
-  s3-local-runs/s3-paper1-bipolaron-boundary-midpoints-40x40-v1/20260930T102438Z`;
-- comparison JSON/CSV outputs: under the 40x40 run directory's `comparison/`;
-- 40x40 run directory:
-  `s3-local-runs/s3-paper1-bipolaron-finite-size-40x40-v1/20260928T183000Z`;
-- 20x20 run directory:
-  `s3-local-runs/s3-paper1-bipolaron-production-20x20-v1/20260928T150000Z`;
-- previous S3 result report:
-  `docs/s3-paper1-bipolaron-finite-size-40x40-results-20260930.md`;
-- execution habit: `docs/project-checkpoint-practice.md`.
+- 20x20 midpoint manifest: `configs/s3-paper1-bipolaron-boundary-midpoints-20x20-v1.json`
+  (SHA-256 `b649d678bac1559709df1477315cfb18dbad2ce5e3917af013311a00de3c0307`)
+- 20x20 run: `s3-local-runs/s3-paper1-bipolaron-boundary-midpoints-20x20-v1/20261007T144455Z`
+  (16/16 branches)
+- 40x40 midpoint manifest: `configs/s3-paper1-bipolaron-boundary-midpoints-40x40-v1.json`
+- 40x40 run: `s3-local-runs/s3-paper1-bipolaron-boundary-midpoints-40x40-v1/20260930T102438Z`
+  (28/28 branches)
+- Reproducible midpoint comparison: `scripts/compare_s3_midpoint_sizes.py`
+- Comparison report: `docs/s3-paper1-bipolaron-boundary-midpoints-finite-size-results-20261007.md`
+- JSON/CSV comparison products:
+  `s3-local-runs/s3-paper1-bipolaron-boundary-midpoints-40x40-v1/20260930T102438Z/comparison/midpoints-20261007/`
+- Original coarse-interval reference:
+  `docs/s3-paper1-bipolaron-finite-size-comparison-20260930.md`
+- Original 20x20 production run:
+  `s3-local-runs/s3-paper1-bipolaron-production-20x20-v1/20260928T150000Z`.
+- Original targeted 40x40 finite-size run:
+  `s3-local-runs/s3-paper1-bipolaron-finite-size-40x40-v1/20260928T183000Z`.
+- Original S3 Drive campaign folder:
+  `https://drive.google.com/drive/folders/1sLQuIJGFDZoqc9rx9CSTtz6tOEXYwp0y`.
+- Original 40x40 manifest / raw archive / report: `1CX2D-wSDc-TDcZW7OD4I9nbCfU8P7l5I` / `1OT04-4gbzPcf0iibnbXKLQvXj8iq3CCf` / `1dvoAJ4QGVOHib6Sk0RJPAzC8hQcMSiQn`.
+- Original 20x20-to-40x40 comparison report / reproducibility archive: `1x1_CLThljFLwYvp4aJW7SaTZURD59wYC` / `1qqGo1beNtPzux_FNKdOcynWUpEzT3JAv`.
+- Frozen 40x40 midpoint manifest: `1h9z-B69AH9BqINQ0oqQXibpikZ4MSvVp`.
+- Campaign Drive folder:
+  `https://drive.google.com/drive/folders/1F1HZmCa2-GRGLGIWpGKcIKPKO49liFkI`
+- Verified combined raw-data archive: `1Kps1Hdni8LBrMKXjsEDYXCPdbq-FJtNy`
+  (`s3-paper1-midpoint-finite-size-20261007.zip`, SHA-256
+  `ea0be8f97816642acd02d72420d537369d90386fae558e7b3e808a7893877d1b`).
+- Verified results report in Drive: `1Wdk_ee6SIgwF_bEor7hX3P_UlmaWFz8G`.
+- Both uploads were verified by listing the campaign folder.
 
-The 40x40 directory timestamp label is inconsistent with its provenance start
-time (`2026-09-28T20:51:53Z`); the provenance record is authoritative.
-
-## Google Drive
-
-Campaign folder:
-https://drive.google.com/drive/folders/1sLQuIJGFDZoqc9rx9CSTtz6tOEXYwp0y
-
-- frozen 40x40 manifest: `1CX2D-wSDc-TDcZW7OD4I9nbCfU8P7l5I`;
-- 40x40 final raw archive: `1OT04-4gbzPcf0iibnbXKLQvXj8iq3CCf`;
-- 40x40 result report: `1dvoAJ4QGVOHib6Sk0RJPAzC8hQcMSiQn`;
-- 20x20/40x40 comparison report: `1x1_CLThljFLwYvp4aJW7SaTZURD59wYC`;
-- reproducible 20x20+40x40 comparison archive: `1qqGo1beNtPzux_FNKdOcynWUpEzT3JAv`.
-- midpoint campaign folder: `1F1HZmCa2-GRGLGIWpGKcIKPKO49liFkI`;
-- frozen midpoint manifest: `1h9z-B69AH9BqINQ0oqQXibpikZ4MSvVp`.
-- pre-run checkpoint: `1XJmnD_u5l_8KVft8tiMwRhq98WwVPbiu`.
-- running checkpoint: `1Hzrw9C9SLfMWe3u4-NpPX4n4dSnGpdWW`.
-
-The target folder was listed after upload and all artifacts above were visible.
+Generated run directories are not committed to Git. Current code and report
+changes remain to be reviewed and committed on `s3-paper1-parameter-campaign`
+under the project's milestone workflow.
