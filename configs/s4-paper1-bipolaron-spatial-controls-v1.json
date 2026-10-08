@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "dataset_id": "s4-paper1-bipolaron-spatial-controls-v1",
+  "data_role": "representative_states_from_validated_model_trend_campaign",
+  "source_campaign_id": "s3-paper1-bipolaron-production-20x20-v1",
+  "source_campaign_manifest": "configs/s3-paper1-bipolaron-production-20x20-v1.json",
+  "lattice_size": [20, 20],
+  "model": {
+    "geometry": "bandwidth-matched isotropic square",
+    "boundary_conditions": "periodic",
+    "Jx_eV": 0.0575,
+    "Jy_eV": 0.0575,
+    "K1_eV_per_A2": 16.51,
+    "K2_eV_per_A2": 0.51,
+    "base_alpha_intra_eV_per_A": 3.0,
+    "base_alpha_x_eV_per_A": 0.1,
+    "base_alpha_y_eV_per_A": 0.1,
+    "coupling_scale_definition": "global multiplier applied to all three electron-phonon couplings",
+    "interaction": "onsite U plus isotropic nearest-neighbour V1",
+    "long_range_coulomb": false
+  },
+  "numerical": {
+    "optimizer": "RPROP",
+    "max_iterations": 1200,
+    "coordinate_update_tolerance_A": 1e-8,
+    "gradient_tolerance_eV_per_A": 1e-6,
+    "eigensolver_tolerance": 1e-11,
+    "thread_count": 1
+  },
+  "states": [
+    {"id": "onsite", "coupling_scale": 1.0, "U_eV": 0.525, "V1_eV": 0.16, "branch": "onsite", "expected_observable_classification": "onsite"},
+    {"id": "axial", "coupling_scale": 1.0, "U_eV": 0.75, "V1_eV": 0.004, "branch": "intersite_y", "expected_observable_classification": "axial"},
+    {"id": "diagonal", "coupling_scale": 1.0, "U_eV": 0.75, "V1_eV": 0.016, "branch": "diagonal", "expected_observable_classification": "marginal_diagonal"},
+    {"id": "separated", "coupling_scale": 1.0, "U_eV": 0.75, "V1_eV": 0.08, "branch": "separated", "expected_observable_classification": "separated"}
+  ],
+  "notes": [
+    "This is a compact spatial export from already completed S3 points, not a new phase-map campaign.",
+    "The diagonal example is marginal under the frozen 5 meV robust-binding threshold.",
+    "Initial branch labels are initialization metadata; physical classification comes from final observables."
+  ]
+}

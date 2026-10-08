@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "dataset_id": "paper1-generic-polaron-spin-blind-exciton-controls-v1",
+  "data_role": "validation_control",
+  "model_status": "generic_reference_control_not_material_fit",
+  "model": {
+    "Jx_eV": 0.1,
+    "Jy_eV": 0.015,
+    "alpha_intra_eV_per_A": 3.0,
+    "alpha_interx_eV_per_A": 0.4,
+    "alpha_intery_eV_per_A": 0.4,
+    "K1_eV_per_A2": 16.51,
+    "K2_eV_per_A2": 0.51
+  },
+  "onsite_eh_attraction_eV": 0.525,
+  "boundary_conditions": "periodic",
+  "optimizer": "legacy-compatible component-wise RPROP with strict convergence",
+  "numerical": {
+    "max_iterations": 1600,
+    "coordinate_update_tolerance_A": 1e-8,
+    "gradient_tolerance_eV_per_A": 1e-6,
+    "eigensolver_tolerance": 1e-11,
+    "thread_count": 1
+  },
+  "polaron_sizes": [10, 20],
+  "exciton_size": 10,
+  "exciton_initializations": ["frenkel", "ct_x", "ct_y", "diagonal", "separated"],
+  "binding_convention": "E_e-pol + E_h-pol - E_X, using same-size independently relaxed polarons"
+}
